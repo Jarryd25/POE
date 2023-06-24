@@ -27,6 +27,21 @@ namespace Part_3
             recipes = new List<Recipe>();
             filteredRecipes = new List<Recipe>();
 
+            // Sample recipes
+            Recipe recipe1 = new Recipe("Recipe 1");
+            recipe1.AddIngredient(new Ingredient("Ingredient 1", 2, "Units", 100, "Group 1"));
+            recipe1.AddIngredient(new Ingredient("Ingredient 2", 1, "Cups", 150, "Group 2"));
+            recipe1.AddStep("Step 1");
+            recipe1.AddStep("Step 2");
+            recipes.Add(recipe1);
+
+            Recipe recipe2 = new Recipe("Recipe 2");
+            recipe2.AddIngredient(new Ingredient("Ingredient 3", 3, "Units", 200, "Group 1"));
+            recipe2.AddIngredient(new Ingredient("Ingredient 4", 2, "Cups", 250, "Group 3"));
+            recipe2.AddStep("Step 1");
+            recipe2.AddStep("Step 2");
+            recipes.Add(recipe2);
+
         }
     }
 }
