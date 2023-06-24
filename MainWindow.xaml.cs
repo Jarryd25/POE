@@ -96,6 +96,7 @@ namespace Part_3
 
     public partial class MainWindow : Window
     {
+        private List<Recipe> recipes = new List<Recipe>(); // List to store recipes
         public MainWindow()
         {
             InitializeComponent();
