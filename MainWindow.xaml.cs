@@ -100,6 +100,10 @@ namespace Part_3
         public MainWindow()
         {
             InitializeComponent();
+
+            recipes = new List<Recipe>(); // Initialize the recipe list
+            AddSampleData(); // Add sample recipes
+            lstRecipes.ItemsSource = recipes; // Set the item source for the recipe list
         }
 
         // Event handler for filtering recipes based on ingredient
