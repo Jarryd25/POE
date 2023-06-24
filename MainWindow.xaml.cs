@@ -130,5 +130,18 @@ namespace Part_3
 
             lstRecipes.ItemsSource = filteredRecipes;
         }
+
+        // Event handler for filtering recipes based on maximum calories
+        private void TxtMaxCaloriesFilter_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (int.TryParse(txtMaxCaloriesFilter.Text, out int maxCalories))
+            {
+                List<Recipe> filteredRecipes = recipes.Where(recipe =>
+                    recipe.ingredients.Sum(ingredient => ingredient.Calories) <= maxCalories)
+                    .ToList();
+
+                lstRecipes.ItemsSource = filteredRecipes;
+            }
+        }
     }
 }
