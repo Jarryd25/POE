@@ -37,6 +37,9 @@ namespace Part_3
 
     public class Recipe
     {
+        private List<Ingredient> ingredients; // List to store the ingredients
+        private List<string> steps; // List to store the steps
+        public string Name { get; set; } // Name of the recipe
 
     }
 
