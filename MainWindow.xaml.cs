@@ -152,5 +152,14 @@ namespace Part_3
             cmbFoodGroupFilter.SelectedItem = cmbFoodGroupFilter.Items[0];
             txtMaxCaloriesFilter.Text = string.Empty;
         }
+
+        // Event handler for selecting a recipe
+        private void LstRecipes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (lstRecipes.SelectedItem is Recipe selectedRecipe)
+            {
+                selectedRecipe.Display();
+            }
+        }
     }
 }
