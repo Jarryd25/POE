@@ -28,6 +28,9 @@
 
             <!-- TextBox for maximum calories filter -->
             <TextBox x:Name="txtMaxCaloriesFilter" Width="200" Margin="0,0,10,0" VerticalAlignment="Center" TextChanged="TxtMaxCaloriesFilter_TextChanged"/>
+
+            <!-- Button to clear filters -->
+            <Button x:Name="btnClearFilters" Content="Clear Filters" Click="BtnClearFilters_Click"/>
         </StackPanel>
     </Grid>
 </Window>
