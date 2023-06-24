@@ -25,6 +25,9 @@
                 <ComboBoxItem Content="Group 2"/>
                 <ComboBoxItem Content="Group 3"/>
             </ComboBox>
+
+            <!-- TextBox for maximum calories filter -->
+            <TextBox x:Name="txtMaxCaloriesFilter" Width="200" Margin="0,0,10,0" VerticalAlignment="Center" TextChanged="TxtMaxCaloriesFilter_TextChanged"/>
         </StackPanel>
     </Grid>
 </Window>
