@@ -20,6 +20,8 @@ namespace Part_3
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<Recipe> recipes; // List to store recipes
+        private List<Recipe> filteredRecipes; // List to store filtered recipes
         public MainWindow()
         {
             InitializeComponent();
