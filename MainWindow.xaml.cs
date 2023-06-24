@@ -110,5 +110,25 @@ namespace Part_3
 
             lstRecipes.ItemsSource = filteredRecipes;
         }
+
+        // Event handler for filtering recipes based on food group
+        private void CmbFoodGroupFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string selectedFoodGroup = (cmbFoodGroupFilter.SelectedItem as ComboBoxItem)?.Content.ToString();
+            List<Recipe> filteredRecipes;
+
+            if (selectedFoodGroup == "All Food Groups")
+            {
+                filteredRecipes = recipes;
+            }
+            else
+            {
+                filteredRecipes = recipes.Where(recipe =>
+                    recipe.ingredients.Any(ingredient => ingredient.FoodGroup == selectedFoodGroup))
+                    .ToList();
+            }
+
+            lstRecipes.ItemsSource = filteredRecipes;
+        }
     }
 }
