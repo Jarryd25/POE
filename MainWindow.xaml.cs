@@ -195,5 +195,11 @@ namespace Part_3
 
             lstRecipes.ItemsSource = recipes;
         }
+
+        // Event handler for the window loaded event
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            AddSampleData();
+        }
     }
 }
