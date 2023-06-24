@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -60,6 +61,12 @@ namespace Part_3
         private void TxtMaxCaloriesFilter_TextChanged(object sender, RoutedEventArgs e)
         {
             ApplyFilters();
+        }
+
+        // Method to apply the filters
+        private void ApplyFilters()
+        {
+            
         }
     }
 }
