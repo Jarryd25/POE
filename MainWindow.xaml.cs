@@ -161,5 +161,39 @@ namespace Part_3
                 selectedRecipe.Display();
             }
         }
+
+        // Method to add sample recipes and ingredients
+        private void AddSampleData()
+        {
+            //Sample recipes
+            Recipe recipe1 = new Recipe("Pasta");
+            recipe1.AddIngredient(new Ingredient("Spaghetti", 200, "g", 220, "Group 1"));
+            recipe1.AddIngredient(new Ingredient("Tomato Sauce", 150, "g", 60, "Group 2"));
+            recipe1.AddIngredient(new Ingredient("Parmesan Cheese", 50, "g", 160, "Group 3"));
+            recipe1.AddStep("Boil water and cook spaghetti according to package instructions.");
+            recipe1.AddStep("Heat tomato sauce in a pan and add cooked spaghetti. Mix well.");
+            recipe1.AddStep("Serve hot, sprinkled with Parmesan cheese.");
+            recipes.Add(recipe1);
+
+            Recipe recipe2 = new Recipe("Salad");
+            recipe2.AddIngredient(new Ingredient("Lettuce", 100, "g", 5, "Group 1"));
+            recipe2.AddIngredient(new Ingredient("Tomatoes", 200, "g", 25, "Group 2"));
+            recipe2.AddIngredient(new Ingredient("Cucumbers", 150, "g", 10, "Group 2"));
+            recipe2.AddStep("Wash and chop lettuce, tomatoes, and cucumbers.");
+            recipe2.AddStep("Combine all ingredients in a bowl.");
+            recipe2.AddStep("Drizzle with your favorite dressing.");
+            recipes.Add(recipe2);
+
+            Recipe recipe3 = new Recipe("Smoothie");
+            recipe3.AddIngredient(new Ingredient("Banana", 1, "piece", 105, "Group 1"));
+            recipe3.AddIngredient(new Ingredient("Strawberries", 150, "g", 50, "Group 2"));
+            recipe3.AddIngredient(new Ingredient("Greek Yogurt", 200, "g", 150, "Group 3"));
+            recipe3.AddStep("Peel and slice the banana.");
+            recipe3.AddStep("Wash and chop strawberries.");
+            recipe3.AddStep("Blend banana, strawberries, and Greek yogurt until smooth.");
+            recipes.Add(recipe3);
+
+            lstRecipes.ItemsSource = recipes;
+        }
     }
 }
