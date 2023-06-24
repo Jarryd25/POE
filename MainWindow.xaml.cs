@@ -45,5 +45,11 @@ namespace Part_3
             // Display all recipes initially
             lstRecipes.ItemsSource = recipes;
         }
+
+        // Event handler for ingredient filter textbox
+        private void TxtIngredientFilter_TextChanged(object sender, RoutedEventArgs e)
+        {
+            ApplyFilters();
+        }
     }
 }
