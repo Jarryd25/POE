@@ -3,6 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Recipe App" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="763*"/>
+            <ColumnDefinition Width="16*"/>
+            <ColumnDefinition Width="21*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <!-- First row for the filter section -->
             <RowDefinition Height="Auto"/>
@@ -11,7 +16,7 @@
         </Grid.RowDefinitions>
 
         <!-- Filter section -->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10,10,10,10" Grid.ColumnSpan="3">
             <!-- TextBox for ingredient filter -->
             <TextBox x:Name="IngredientFilter" Width="200" Margin="0,0,10,0" VerticalAlignment="Center" TextChanged="TxtIngredientFilter_TextChanged"/>
 
@@ -31,6 +36,18 @@
 
             <!-- Button to clear filters -->
             <Button x:Name="btnClearFilters" Content="Clear Filters" Click="BtnClearFilters_Click"/>
+
+            <!-- Recipe list -->
+            <ListBox Grid.Row="1" x:Name="lstRecipes" Margin="10" HorizontalContentAlignment="Stretch"
+                 SelectionChanged="LstRecipes_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <!-- Template for each item in the recipe list -->
+                        <TextBlock Text="{Binding Name}" Padding="5"/>
+                        <!-- Display the recipe name -->
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
     </Grid>
 </Window>
