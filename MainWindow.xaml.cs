@@ -56,5 +56,10 @@ namespace Part_3
         {
             ApplyFilters();
         }
+        // Event handler for max calories filter textbox
+        private void TxtMaxCaloriesFilter_TextChanged(object sender, RoutedEventArgs e)
+        {
+            ApplyFilters();
+        }
     }
 }
