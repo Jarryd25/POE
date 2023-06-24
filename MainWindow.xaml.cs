@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace Part_3
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private List<Recipe> recipes; // List to store recipes
@@ -25,6 +22,11 @@ namespace Part_3
         public MainWindow()
         {
             InitializeComponent();
+
+            // Initialise the lists
+            recipes = new List<Recipe>();
+            filteredRecipes = new List<Recipe>();
+
         }
     }
 }
