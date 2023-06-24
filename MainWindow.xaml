@@ -9,5 +9,10 @@
             <!-- Second row for the recipe list -->
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
+        <!-- Filter section -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+
+        </StackPanel>
     </Grid>
 </Window>
