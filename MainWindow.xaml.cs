@@ -16,6 +16,24 @@ using System.Windows.Shapes;
 
 namespace Part_3
 {
+    // Define a class for an ingredient
+    class Ingredient
+    {
+        public string Name { get; set; } // Name of the ingredient
+        public double Quantity { get; set; } // Quantity of the ingredient
+        public string Unit { get; set; } // Unit of measurement of the ingredient
+        public int Calories { get; set; } // Number of calories in the ingredient
+        public string FoodGroup { get; set; } // Food group that the ingredient belongs to
+
+        public Ingredient(string name, double quantity, string unit, int calories, string foodGroup)
+        {
+            Name = name;
+            Quantity = quantity;
+            Unit = unit;
+            Calories = calories;
+            FoodGroup = foodGroup;
+        }
+    }
     public partial class MainWindow : Window
     {
         private List<Recipe> recipes; // List to store recipes
