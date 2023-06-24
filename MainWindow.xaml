@@ -35,18 +35,27 @@
 
             <!-- Button to clear filters -->
             <Button x:Name="btnClearFilters" Content="Clear Filters" Click="BtnClearFilters_Click"/>
-
-            <!-- Recipe list -->
-            <ListBox Grid.Row="1" x:Name="lstRecipes" Margin="10" HorizontalContentAlignment="Stretch"
-                 SelectionChanged="LstRecipes_SelectionChanged">
+        </StackPanel>
+        
+            <ListBox x:Name="lstRecipes" HorizontalContentAlignment="Stretch"
+                 SelectionChanged="LstRecipes_SelectionChanged" Height="22" RenderTransformOrigin="0.5,0.5" Width="100">
+                <ListBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ListBox.RenderTransform>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
+                        <!-- Display the recipe name -->
                         <!-- Template for each item in the recipe list -->
                         <TextBlock Text="{Binding Name}" Padding="5"/>
-                        <!-- Display the recipe name -->
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-        </StackPanel>
+            <!-- Recipe list -->
+        
     </Grid>
 </Window>

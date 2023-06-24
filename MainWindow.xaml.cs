@@ -105,7 +105,7 @@ namespace Part_3
         // Event handler for filtering recipes based on ingredient
         private void TxtIngredientFilter_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string ingredientFilter = IngredientFilter.Text.ToLower();
+            string ingredientFilter = txtIngredientFilter.Text.ToLower();
             List<Recipe> filteredRecipes = recipes.Where(recipe => recipe.ingredients.Any(ingredient => ingredient.Name.ToLower().Contains(ingredientFilter))).ToList();
 
             lstRecipes.ItemsSource = filteredRecipes;
@@ -148,7 +148,7 @@ namespace Part_3
         private void BtnClearFilters_Click(object sender, RoutedEventArgs e)
         {
             lstRecipes.ItemsSource = recipes;
-            IngredientFilter.Text = string.Empty;
+            txtIngredientFilter.Text = string.Empty;
             cmbFoodGroupFilter.SelectedItem = cmbFoodGroupFilter.Items[0];
             txtMaxCaloriesFilter.Text = string.Empty;
         }
