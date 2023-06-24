@@ -14,7 +14,17 @@
         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
             <!-- TextBox for ingredient filter -->
             <TextBox x:Name="IngredientFilter" Width="200" Margin="0,0,10,0" VerticalAlignment="Center" TextChanged="TxtIngredientFilter_TextChanged"/>
-           
+
+            <!-- ComboBox for food group filter -->
+            <ComboBox x:Name="cmbFoodGroupFilter" Width="200" Margin="0,0,10,0" VerticalAlignment="Center"
+                      SelectionChanged="CmbFoodGroupFilter_SelectionChanged">
+                <ComboBoxItem Content="All Food Groups"/>
+                <!-- Default option -->
+                <ComboBoxItem Content="Group 1"/>
+                <!-- Food group options -->
+                <ComboBoxItem Content="Group 2"/>
+                <ComboBoxItem Content="Group 3"/>
+            </ComboBox>
         </StackPanel>
     </Grid>
 </Window>
