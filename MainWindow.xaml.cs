@@ -38,7 +38,7 @@ namespace Part_3
     // Define a class for a recipe
     class Recipe
     {
-        private List<Ingredient> ingredients; // List to store the ingredients
+        public List<Ingredient> ingredients; // List to store the ingredients
         private List<string> steps; // List to store the steps
         public string Name { get; set; } // Name of the recipe
 
@@ -100,6 +100,15 @@ namespace Part_3
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        // Event handler for filtering recipes based on ingredient
+        private void TxtIngredientFilter_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string ingredientFilter = IngredientFilter.Text.ToLower();
+            List<Recipe> filteredRecipes = recipes.Where(recipe => recipe.ingredients.Any(ingredient => ingredient.Name.ToLower().Contains(ingredientFilter))).ToList();
+
+            lstRecipes.ItemsSource = filteredRecipes;
         }
     }
 }
