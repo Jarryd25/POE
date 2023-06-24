@@ -35,13 +35,14 @@ namespace Part_3
         }
     }
 
-    public class Recipe
+    // Define a class for a recipe
+    class Recipe
     {
         private List<Ingredient> ingredients; // List to store the ingredients
         private List<string> steps; // List to store the steps
         public string Name { get; set; } // Name of the recipe
 
-        // Constructor to initialise the recipe and its properties
+        // Constructor to initialize the recipe and its properties
         public Recipe(string name)
         {
             Name = name;
@@ -59,6 +60,37 @@ namespace Part_3
         public void AddStep(string step)
         {
             steps.Add(step);
+        }
+
+
+        // Method to calculate and display the total calories of the recipe
+        public void DisplayTotalCalories()
+        {
+            int totalCalories = ingredients.Sum(ingredient => ingredient.Calories);
+            MessageBox.Show($"Total calories: {totalCalories}");
+            if (totalCalories > 300)
+            {
+                MessageBox.Show("Warning: This recipe exceeds 300 calories.");
+            }
+        }
+
+        // Method to display the recipe in a neat format
+        public void Display()
+        {
+            MessageBox.Show($"Recipe: {Name}");
+
+            MessageBox.Show("Ingredients:");
+            foreach (Ingredient ingredient in ingredients)
+            {
+                MessageBox.Show($"{ingredient.Quantity} {ingredient.Unit} of {ingredient.Name} " +
+                                $"({ingredient.Calories} calories, {ingredient.FoodGroup})");
+            }
+
+            MessageBox.Show("Steps:");
+            for (int i = 0; i < steps.Count; i++)
+            {
+                MessageBox.Show($"{i + 1}. {steps[i]}");
+            }
         }
     }
 
