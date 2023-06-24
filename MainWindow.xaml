@@ -17,8 +17,7 @@
 
         <!-- Filter section -->
         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10,10,10,10" Grid.ColumnSpan="3">
-            <!-- TextBox for ingredient filter -->
-            <TextBox x:Name="IngredientFilter" Width="200" Margin="0,0,10,0" VerticalAlignment="Center" TextChanged="TxtIngredientFilter_Unchanged"/>
+            <TextBox x:Name="txtIngredientFilter" Width="200" Margin="0,0,10,0" VerticalAlignment="Center" TextChanged="TxtIngredientFilter_TextChanged"/>
 
             <!-- ComboBox for food group filter -->
             <ComboBox x:Name="cmbFoodGroupFilter" Width="200" Margin="0,0,10,0" VerticalAlignment="Center"
