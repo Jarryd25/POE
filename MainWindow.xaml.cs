@@ -41,6 +41,25 @@ namespace Part_3
         private List<string> steps; // List to store the steps
         public string Name { get; set; } // Name of the recipe
 
+        // Constructor to initialise the recipe and its properties
+        public Recipe(string name)
+        {
+            Name = name;
+            ingredients = new List<Ingredient>();
+            steps = new List<string>();
+        }
+
+        // Method to add an ingredient to the recipe
+        public void AddIngredient(Ingredient ingredient)
+        {
+            ingredients.Add(ingredient);
+        }
+
+        // Method to add a step to the recipe
+        public void AddStep(string step)
+        {
+            steps.Add(step);
+        }
     }
 
     public partial class MainWindow : Window
@@ -50,50 +69,6 @@ namespace Part_3
         public MainWindow()
         {
             InitializeComponent();
-
-            // Initialise the lists
-            recipes = new List<Recipe>();
-            filteredRecipes = new List<Recipe>();
-
-            // Sample recipes
-            Recipe recipe1 = new Recipe("Recipe 1");
-            recipe1.AddIngredient(new Ingredient("Ingredient 1", 2, "Units", 100, "Group 1"));
-            recipe1.AddIngredient(new Ingredient("Ingredient 2", 1, "Cups", 150, "Group 2"));
-            recipe1.AddStep("Step 1");
-            recipe1.AddStep("Step 2");
-            recipes.Add(recipe1);
-
-            Recipe recipe2 = new Recipe("Recipe 2");
-            recipe2.AddIngredient(new Ingredient("Ingredient 3", 3, "Units", 200, "Group 1"));
-            recipe2.AddIngredient(new Ingredient("Ingredient 4", 2, "Cups", 250, "Group 3"));
-            recipe2.AddStep("Step 1");
-            recipe2.AddStep("Step 2");
-            recipes.Add(recipe2);
-
-            // Display all recipes initially
-            lstRecipes.ItemsSource = recipes;
-        }
-
-        // Event handler for ingredient filter textbox
-        private void TxtIngredientFilter_TextChanged(object sender, RoutedEventArgs e)
-        {
-            ApplyFilters();
-        }
-        // Event handler for food group filter combobox
-        private void CmbFoodGroupFilter_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-            ApplyFilters();
-        }
-        // Event handler for max calories filter textbox
-        private void TxtMaxCaloriesFilter_TextChanged(object sender, RoutedEventArgs e)
-        {
-            ApplyFilters();
-        }
-
-        // Method to apply the filters
-        private void ApplyFilters()
-        {
-            
         }
     }
 }
