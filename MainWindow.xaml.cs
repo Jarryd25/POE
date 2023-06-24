@@ -143,5 +143,14 @@ namespace Part_3
                 lstRecipes.ItemsSource = filteredRecipes;
             }
         }
+
+        // Event handler to clear all filters and show all recipes
+        private void BtnClearFilters_Click(object sender, RoutedEventArgs e)
+        {
+            lstRecipes.ItemsSource = recipes;
+            IngredientFilter.Text = string.Empty;
+            cmbFoodGroupFilter.SelectedItem = cmbFoodGroupFilter.Items[0];
+            txtMaxCaloriesFilter.Text = string.Empty;
+        }
     }
 }
