@@ -34,6 +34,12 @@ namespace Part_3
             FoodGroup = foodGroup;
         }
     }
+
+    public class Recipe
+    {
+
+    }
+
     public partial class MainWindow : Window
     {
         private List<Recipe> recipes; // List to store recipes
