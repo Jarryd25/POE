@@ -42,6 +42,8 @@ namespace Part_3
             recipe2.AddStep("Step 2");
             recipes.Add(recipe2);
 
+            // Display all recipes initially
+            lstRecipes.ItemsSource = recipes;
         }
     }
 }
