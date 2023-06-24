@@ -51,5 +51,10 @@ namespace Part_3
         {
             ApplyFilters();
         }
+        // Event handler for food group filter combobox
+        private void CmbFoodGroupFilter_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            ApplyFilters();
+        }
     }
 }
